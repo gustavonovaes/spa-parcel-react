@@ -2,26 +2,36 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
+import PageWrapper from "../components/PageWrapper";
+
 // https://github.com/parcel-bundler/parcel/issues/2863#issue-426218466
 const Logo = React.lazy(() => import("./Logo"));
 
 export default function Dashboard({ children }) {
   return <>
     <Header>
-      <div>
-        <Logo />
-      </div>
+      <PageWrapper>
+        <div>
+          <Logo />
+        </div>
 
-      <nav>
-        <NavLink exact to="/">Home</NavLink>
-        <NavLink to="/about">About</NavLink>
-      </nav>
+        <nav>
+          <NavLink exact to="/">Home</NavLink>
+          <NavLink to="/about">About</NavLink>
+        </nav>
+      </PageWrapper>
     </Header>
 
-    <Main>{children}</Main>
+    <Main>
+      <PageWrapper>
+        {children}
+      </PageWrapper>
+    </Main>
 
     <Footer>
-      Copyright © {(new Date).getFullYear()}
+      <PageWrapper>
+        Copyright © {(new Date).getFullYear()}
+      </PageWrapper>
     </Footer>
   </>
 }
