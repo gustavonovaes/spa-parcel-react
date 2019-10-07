@@ -9,11 +9,13 @@
     "prebuild": "rm -rf dist",
     "build": "parcel build ./public/index.html --no-cache --out-dir dist/",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "analyze": "source-map-explorer dist/*.js"
   },
   "devDependencies": {
     "gh-pages": "^2.1.1",
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "source-map-explorer": "^2.1.0"
   },
   "dependencies": {
     "react": "^16.10.2",
