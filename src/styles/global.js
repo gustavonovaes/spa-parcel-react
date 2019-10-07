@@ -2,6 +2,8 @@ import { createGlobalStyle } from "styled-components";
 
 
 export default createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css?family=Exo+2&display=swap');
+
   :root {
     --color-text-primary: #333;
     --color-primary: #4bb543;
@@ -24,7 +26,7 @@ export default createGlobalStyle`
   }
 
   body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Exo 2', Verdana, Geneva, Tahoma, sans-serif;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
     
