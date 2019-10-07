@@ -15,7 +15,6 @@ export default function Dashboard({ children }) {
       <nav>
         <NavLink exact to="/">Home</NavLink>
         <NavLink to="/about">About</NavLink>
-        <NavLink to="/404">NotFound</NavLink>
       </nav>
     </Header>
 
@@ -48,8 +47,11 @@ const Header = styled.header`
     a {
       padding: 20px;
       background-color: white;
+      color: #333;
+
       &.active {
-        color: #000000;
+        background: var(--color-primary);
+        color: white;
       }
 
       & + a {
@@ -68,4 +70,6 @@ const Main = styled.main`
 const Footer = styled.footer`
   background-color: #f3f3f3;
   padding: 20px;
+
+  color: #666;
 `;
