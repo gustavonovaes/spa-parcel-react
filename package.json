@@ -6,6 +6,7 @@
   "homepage": "https://gustavonovaes.github.io/spa-parcel-react",
   "scripts": {
     "dev": "parcel ./public/index.html",
+    "prebuild": "rm -rf dist",
     "build": "parcel build ./public/index.html --no-cache --out-dir dist/",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d dist"
