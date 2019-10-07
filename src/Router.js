@@ -10,7 +10,7 @@ const Loading = <span>Loading...</span>;
 export default function Router() {
   return <>
     <React.Suspense fallback={Loading}>
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route path="/" exact render={() => <Home uselessProp={1} />} />
           <Route path="/about" render={() => <About uselessProp={1} />} />
