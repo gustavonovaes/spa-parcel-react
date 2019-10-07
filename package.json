@@ -8,7 +8,7 @@
     "dev": "parcel ./public/index.html",
     "prebuild": "rm -rf dist",
     "build": "parcel build ./public/index.html --no-cache --out-dir dist/",
-    "predeploy": "yarn build",
+    "predeploy": "parcel build ./public/index.html --no-cache --out-dir dist/ --public-url '.'",
     "deploy": "gh-pages -d dist",
     "analyze": "source-map-explorer dist/*.js"
   },
