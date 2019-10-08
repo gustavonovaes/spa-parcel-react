@@ -9,4 +9,4 @@
 - [ ] [react-helmet](https://github.com/nfl/react-helmet)
 - [ ] [react-datepicker](https://github.com/Hacker0x01/react-datepicker/)
 - ~~[ ] [canvasjs](https://canvasjs.com/)~~
-- [ ] [chart.js](https://github.com/chartjs/Chart.js)
+- [x] [chart.js](https://github.com/chartjs/Chart.js)
