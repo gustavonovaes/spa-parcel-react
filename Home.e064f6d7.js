@@ -130,7 +130,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n\n  flex: 1 0 50%;\n\n  max-width: 60vw;\n\n  margin: 40px 0;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n\n  flex-grow: 1;\n  flex-basis: 100%;\n  width: 100%;\n  margin-top: 10px;\n  \n  @media (min-width: 800px) {\n    flex: 1 0 40%;\n    margin-top: 20px;\n\n    + div {\n      margin-left: 20px;\n    }\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -197,6 +197,10 @@ var Line = _react.default.lazy(function () {
   return require("_bundle_loader")(require.resolve("../components/Charts/Line"));
 });
 
+var SimpleTable = _react.default.lazy(function () {
+  return require("_bundle_loader")(require.resolve("../components/Tables/Simple"));
+});
+
 function Home() {
   return _react.default.createElement(_Dashboard.default, null, _react.default.createElement("h1", null, "Charts"), _react.default.createElement(_Row.default, null, _react.default.createElement(_Col.default, {
     size: "1"
@@ -213,9 +217,11 @@ function Home() {
     fallback: _react.default.createElement("span", null, "Loading...")
   }, _react.default.createElement(Line, {
     updateInterval: 5000
-  })))));
+  })))), _react.default.createElement("h1", null, "Tables"), _react.default.createElement(_react.default.Suspense, {
+    fallback: _react.default.createElement("span", null, "Loading...")
+  }, _react.default.createElement(_Row.default, null, _react.default.createElement(_Col.default, null, _react.default.createElement(SimpleTable, null)))));
 }
-},{"react":"../node_modules/react/index.js","../components/Dashboard":"../src/components/Dashboard.js","../components/UI/Col":"../src/components/UI/Col.js","../components/UI/Row":"../src/components/UI/Row.js","_bundle_loader":"../node_modules/parcel-bundler/src/builtins/bundle-loader.js","../components/Charts/Doughnut":[["Doughnut.98d19cb9.js","../src/components/Charts/Doughnut.js"],"Doughnut.98d19cb9.js.map","../src/components/Charts/Doughnut.js"],"../components/Charts/Line":[["Line.f5ed6a1a.js","../src/components/Charts/Line.js"],"Line.f5ed6a1a.js.map","../src/components/Charts/Line.js"]}],"../node_modules/moment/moment.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../components/Dashboard":"../src/components/Dashboard.js","../components/UI/Col":"../src/components/UI/Col.js","../components/UI/Row":"../src/components/UI/Row.js","_bundle_loader":"../node_modules/parcel-bundler/src/builtins/bundle-loader.js","../components/Charts/Doughnut":[["Doughnut.98d19cb9.js","../src/components/Charts/Doughnut.js"],"Doughnut.98d19cb9.js.map","../src/components/Charts/Doughnut.js"],"../components/Charts/Line":[["Line.f5ed6a1a.js","../src/components/Charts/Line.js"],"Line.f5ed6a1a.js.map","../src/components/Charts/Line.js"],"../components/Tables/Simple":[["Simple.69581025.js","../src/components/Tables/Simple.js"],"Simple.69581025.js.map","../src/components/Tables/Simple.js"]}],"../node_modules/moment/moment.js":[function(require,module,exports) {
 var define;
 var global = arguments[3];
 //! moment.js
@@ -23727,7 +23733,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33281" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46343" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

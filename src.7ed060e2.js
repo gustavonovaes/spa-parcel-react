@@ -39488,7 +39488,7 @@ var _PageWrapper = _interopRequireDefault(require("./UI/PageWrapper"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  background-color: #f3f3f3;\n  padding: 20px;\n\n  color: #666;\n"]);
+  var data = _taggedTemplateLiteral(["\n  background-color: #f3f3f3;\n  \n  padding: 10px;\n  @media(min-width: 800px) { \n    padding: 20px;\n  }\n\n  color: #666;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -39498,7 +39498,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  flex-grow: 1;\n  overflow: auto;\n  padding: 20px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  flex-grow: 1;\n  overflow: auto;\n\n  padding: 10px;\n  @media(min-width: 800px) { \n    padding: 20px;\n  }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -39508,7 +39508,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n\n  height: 100px;\n  padding: 0 20px;\n  \n  background-color: #fafafa;\n  box-shadow: 0 0 5px rgba(0, 0, 0, .08);\n\n  img {\n    height: 100%;\n    min-height: 60px;\n    max-height: 100px;  \n  }\n\n  nav { \n    a {\n      padding: 20px;\n      background-color: white;\n      color: #333;\n\n      &.active {\n        background: var(--color-primary);\n        color: white;\n      }\n\n      & + a {\n        margin-left: 10px;\n      }\n    }\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n\n  padding: 0 10px;\n  @media(min-width: 800px) {\n    height: 100px;\n    padding: 0 20px;  \n  }\n  \n  background-color: #fafafa;\n  box-shadow: 0 0 5px rgba(0, 0, 0, .08);\n\n  img {\n    height: 100%;\n    min-height: 60px;\n    max-height: 100px;  \n  }\n\n  nav { \n    a {\n      padding: 10px;\n      @media(min-width: 800px) { \n        padding: 20px;\n      }\n\n      background-color: white;\n      color: #333;\n\n      &.active {\n        background: var(--color-primary);\n        color: white;\n      }\n\n      & + a {\n        margin-left: 10px;\n      }\n    }\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -39567,7 +39567,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33281" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46343" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
