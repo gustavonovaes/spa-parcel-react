@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
-import PageWrapper from "../components/PageWrapper";
+import PageWrapper from "./UI/PageWrapper";
 
 // https://github.com/parcel-bundler/parcel/issues/2863#issue-426218466
 const Logo = React.lazy(() => import("./Logo"));
