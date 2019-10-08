@@ -1,7 +1,9 @@
 import React from "react";
-import styled from "styled-components";
 
 import Dashboard from '../components/Dashboard';
+import Col from '../components/UI/Col';
+import Row from '../components/UI/Row';
+
 const Doughnut = React.lazy(() => import("../components/Charts/Doughnut"));
 const Line = React.lazy(() => import("../components/Charts/Line"));
 
@@ -24,22 +26,3 @@ export default function Home() {
     </Row>
   </Dashboard>
 }
-
-const Row = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-`
-
-const Col = styled.article`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  flex: 1 0 50%;
-
-  max-width: 60vw;
-
-  margin: 40px 0;
-`
