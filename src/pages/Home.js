@@ -4,8 +4,10 @@ import Dashboard from '../components/Dashboard';
 import Col from '../components/UI/Col';
 import Row from '../components/UI/Row';
 
+
 const Doughnut = React.lazy(() => import("../components/Charts/Doughnut"));
 const Line = React.lazy(() => import("../components/Charts/Line"));
+const SimpleTable = React.lazy(() => import("../components/Tables/Simple"));
 
 export default function Home() {
   return <Dashboard>
@@ -24,5 +26,16 @@ export default function Home() {
         </React.Suspense>
       </Col>
     </Row>
-  </Dashboard>
+
+    <h1>Tables</h1>
+
+    <React.Suspense fallback={<span>Loading...</span>}>
+      <Row >
+        <Col style={{ maxHeight: "25vh", overflow: "auto" }}>
+          <SimpleTable />
+        </Col>
+      </Row>
+    </React.Suspense>
+
+  </Dashboard >
 }
