@@ -39397,7 +39397,7 @@ exports.default = void 0;
 var _styledComponents = require("styled-components");
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  :root {\n    --color-text-primary: #333;\n    --color-primary: #4bb543;\n  }\n\n  html {\n    box-sizing: border-box;\n    scroll-behavior: smooth;\n  }\n\n  *,\n  *::before,\n  *::after {\n    box-sizing: inherit\n  }\n\n  * {\n    margin: 0;\n    padding: 0;\n  }\n\n  body {\n    font-family: Verdana, Geneva, Tahoma, sans-serif;\n    line-height: 1.5;\n    text-rendering: optimizeSpeed;\n    \n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n  }\n\n  a {\n    text-decoration: none;\n  }\n\n  img {\n    display: block;\n    max-width: 100%;\n  }\n\n  input,\n  button,\n  textarea,\n  select {\n    font: inherit;\n  }\n\n  @media (prefers-reduced-motion: reduce) {\n    * {\n      animation-play-state: paused !important;\n      transition: none !important;\n      scroll-behavior: auto !important;\n    }\n  }\n\n  #app {\n    min-height: 100vh;\n    \n    display: flex;\n    flex-direction: column;\n\n    color: var(--color-text-primary);\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  @import url('https://fonts.googleapis.com/css?family=Exo+2&display=swap');\n\n  :root {\n    --color-text-primary: #333;\n    --color-primary: #4bb543;\n  }\n\n  html {\n    box-sizing: border-box;\n    scroll-behavior: smooth;\n  }\n\n  *,\n  *::before,\n  *::after {\n    box-sizing: inherit\n  }\n\n  * {\n    margin: 0;\n    padding: 0;\n  }\n\n  body {\n    font-family: 'Exo 2', Verdana, Geneva, Tahoma, sans-serif;\n    line-height: 1.5;\n    text-rendering: optimizeSpeed;\n    \n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n  }\n\n  a {\n    text-decoration: none;\n  }\n\n  img {\n    display: block;\n    max-width: 100%;\n  }\n\n  input,\n  button,\n  textarea,\n  select {\n    font: inherit;\n  }\n\n  @media (prefers-reduced-motion: reduce) {\n    * {\n      animation-play-state: paused !important;\n      transition: none !important;\n      scroll-behavior: auto !important;\n    }\n  }\n\n  #app {\n    min-height: 100vh;\n    \n    display: flex;\n    flex-direction: column;\n\n    color: var(--color-text-primary);\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -39442,7 +39442,34 @@ var _App = _interopRequireDefault(require("./App"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _reactDom.render)(_react.default.createElement(_App.default, null), document.querySelector("#app"));
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./App":"../src/App.js"}],"../src/components/Dashboard.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./App":"../src/App.js"}],"../src/components/PageWrapper.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  display: inherit;\n  justify-content: inherit;\n  align-items: inherit;\n\n  width: 100%;\n  max-width: 1040px;\n  margin: 0 auto;\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var _default = _styledComponents.default.div(_templateObject());
+
+exports.default = _default;
+},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"../src/components/Dashboard.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39456,10 +39483,12 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _reactRouterDom = require("react-router-dom");
 
+var _PageWrapper = _interopRequireDefault(require("../components/PageWrapper"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  background-color: #f3f3f3;\n  padding: 20px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  background-color: #f3f3f3;\n  padding: 20px;\n\n  color: #666;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -39479,7 +39508,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n\n  height: 100px;\n  padding: 0 20px;\n  \n  background-color: #fafafa;\n  box-shadow: 0 0 5px rgba(0, 0, 0, .08);\n\n  img {\n    height: 100%;\n    min-height: 60px;\n    max-height: 100px;  \n  }\n\n  nav { \n    a {\n      padding: 20px;\n      background-color: white;\n      &.active {\n        color: #000000;\n      }\n\n      & + a {\n        margin-left: 10px;\n      }\n    }\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n\n  height: 100px;\n  padding: 0 20px;\n  \n  background-color: #fafafa;\n  box-shadow: 0 0 5px rgba(0, 0, 0, .08);\n\n  img {\n    height: 100%;\n    min-height: 60px;\n    max-height: 100px;  \n  }\n\n  nav { \n    a {\n      padding: 20px;\n      background-color: white;\n      color: #333;\n\n      &.active {\n        background: var(--color-primary);\n        color: white;\n      }\n\n      & + a {\n        margin-left: 10px;\n      }\n    }\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -39497,14 +39526,12 @@ var Logo = _react.default.lazy(function () {
 
 function Dashboard(_ref) {
   var children = _ref.children;
-  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(Header, null, _react.default.createElement("div", null, _react.default.createElement(Logo, null)), _react.default.createElement("nav", null, _react.default.createElement(_reactRouterDom.NavLink, {
+  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(Header, null, _react.default.createElement(_PageWrapper.default, null, _react.default.createElement("div", null, _react.default.createElement(Logo, null)), _react.default.createElement("nav", null, _react.default.createElement(_reactRouterDom.NavLink, {
     exact: true,
     to: "/"
   }, "Home"), _react.default.createElement(_reactRouterDom.NavLink, {
     to: "/about"
-  }, "About"), _react.default.createElement(_reactRouterDom.NavLink, {
-    to: "/404"
-  }, "NotFound"))), _react.default.createElement(Main, null, children), _react.default.createElement(Footer, null, "Copyright \xA9 ", new Date().getFullYear()));
+  }, "About")))), _react.default.createElement(Main, null, _react.default.createElement(_PageWrapper.default, null, children)), _react.default.createElement(Footer, null, _react.default.createElement(_PageWrapper.default, null, "Copyright \xA9 ", new Date().getFullYear())));
 }
 
 var Header = _styledComponents.default.header(_templateObject());
@@ -39512,7 +39539,7 @@ var Header = _styledComponents.default.header(_templateObject());
 var Main = _styledComponents.default.main(_templateObject2());
 
 var Footer = _styledComponents.default.footer(_templateObject3());
-},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","_bundle_loader":"../node_modules/parcel-bundler/src/builtins/bundle-loader.js","./Logo":[["Logo.bf192aa7.js","../src/components/Logo.js"],"Logo.bf192aa7.js.map",["logo.0c0680ff.svg","../src/assets/logo.svg"],"../src/components/Logo.js"]}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../components/PageWrapper":"../src/components/PageWrapper.js","_bundle_loader":"../node_modules/parcel-bundler/src/builtins/bundle-loader.js","./Logo":[["Logo.bf192aa7.js","../src/components/Logo.js"],"Logo.bf192aa7.js.map",["logo.0c0680ff.svg","../src/assets/logo.svg"],"../src/components/Logo.js"]}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -39540,7 +39567,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "32917" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40629" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

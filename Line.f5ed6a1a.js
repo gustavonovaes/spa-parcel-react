@@ -117,30 +117,104 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../src/assets/logo.svg":[function(require,module,exports) {
-module.exports = "/logo.0c0680ff.svg";
-},{}],"../src/components/Logo.js":[function(require,module,exports) {
+})({"../src/components/Charts/Line.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = Logo;
+exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _logo = _interopRequireDefault(require("../assets/logo.svg"));
+var _reactChartjs = require("react-chartjs-2");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function Logo() {
-  return _react.default.createElement("img", {
-    className: "header--logo",
-    alt: "logo",
-    src: _logo.default
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function Line() {
+  var _React$useState = _react.default.useState(getData()),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      data = _React$useState2[0],
+      setData = _React$useState2[1];
+
+  var _React$useState3 = _react.default.useState(0),
+      _React$useState4 = _slicedToArray(_React$useState3, 2),
+      intervalHandler = _React$useState4[0],
+      setIntervalHandler = _React$useState4[1];
+
+  _react.default.useEffect(function () {
+    setIntervalHandler(setInterval(function () {
+      return updateState();
+    }, 3000));
+    return function () {
+      clearInterval(intervalHandler);
+    };
+  }, []);
+
+  function updateState() {
+    setData(getData());
+  }
+
+  return _react.default.createElement(_reactChartjs.Line, {
+    data: data
   });
 }
-},{"react":"../node_modules/react/index.js","../assets/logo.svg":"../src/assets/logo.svg"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+function getData() {
+  var data = _toConsumableArray(new Array(getRandomInt(10, 30))).map(function () {
+    return getRandomInt(20, 80);
+  });
+
+  return {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    datasets: [{
+      label: 'My First dataset',
+      fill: false,
+      lineTension: 0.1,
+      backgroundColor: 'rgba(75,192,192,0.4)',
+      borderColor: 'rgba(75,192,192,1)',
+      borderCapStyle: 'butt',
+      borderDash: [],
+      borderDashOffset: 0.0,
+      borderJoinStyle: 'miter',
+      pointBorderColor: 'rgba(75,192,192,1)',
+      pointBackgroundColor: '#fff',
+      pointBorderWidth: 1,
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+      pointHoverBorderColor: 'rgba(220,220,220,1)',
+      pointHoverBorderWidth: 2,
+      pointRadius: 1,
+      pointHitRadius: 10,
+      data: data
+    }]
+  };
+}
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+var _default = _react.default.memo(Line);
+
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","react-chartjs-2":"../node_modules/react-chartjs-2/es/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -345,4 +419,4 @@ function hmrAcceptRun(bundle, id) {
   }
 }
 },{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/Logo.bf192aa7.js.map
+//# sourceMappingURL=/Line.f5ed6a1a.js.map
