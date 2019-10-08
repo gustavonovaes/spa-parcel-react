@@ -129,6 +129,10 @@ var _react = _interopRequireDefault(require("react"));
 
 var _reactChartjs = require("react-chartjs-2");
 
+var _useInterval3 = _interopRequireDefault(require("../../hooks/useInterval"));
+
+var _getRandomInt = _interopRequireDefault(require("../../utils/getRandomInt"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
@@ -147,29 +151,12 @@ function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) ||
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function Line() {
-  var _React$useState = _react.default.useState(getData()),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      data = _React$useState2[0],
-      setData = _React$useState2[1];
+function Line(_ref) {
+  var updateInterval = _ref.updateInterval;
 
-  var _React$useState3 = _react.default.useState(0),
-      _React$useState4 = _slicedToArray(_React$useState3, 2),
-      intervalHandler = _React$useState4[0],
-      setIntervalHandler = _React$useState4[1];
-
-  _react.default.useEffect(function () {
-    setIntervalHandler(setInterval(function () {
-      return updateState();
-    }, 3000));
-    return function () {
-      clearInterval(intervalHandler);
-    };
-  }, []);
-
-  function updateState() {
-    setData(getData());
-  }
+  var _useInterval = (0, _useInterval3.default)(getData, updateInterval),
+      _useInterval2 = _slicedToArray(_useInterval, 1),
+      data = _useInterval2[0];
 
   return _react.default.createElement(_reactChartjs.Line, {
     data: data
@@ -177,8 +164,8 @@ function Line() {
 }
 
 function getData() {
-  var data = _toConsumableArray(new Array(getRandomInt(10, 30))).map(function () {
-    return getRandomInt(20, 80);
+  var data = _toConsumableArray(new Array((0, _getRandomInt.default)(10, 30))).map(function () {
+    return (0, _getRandomInt.default)(20, 80);
   });
 
   return {
@@ -207,14 +194,10 @@ function getData() {
   };
 }
 
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
 var _default = _react.default.memo(Line);
 
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-chartjs-2":"../node_modules/react-chartjs-2/es/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-chartjs-2":"../node_modules/react-chartjs-2/es/index.js","../../hooks/useInterval":"../src/hooks/useInterval.js","../../utils/getRandomInt":"../src/utils/getRandomInt.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -242,7 +225,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40629" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33281" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

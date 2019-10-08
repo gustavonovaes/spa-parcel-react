@@ -39442,7 +39442,7 @@ var _App = _interopRequireDefault(require("./App"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _reactDom.render)(_react.default.createElement(_App.default, null), document.querySelector("#app"));
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./App":"../src/App.js"}],"../src/components/PageWrapper.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./App":"../src/App.js"}],"../src/components/UI/PageWrapper.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39483,7 +39483,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _reactRouterDom = require("react-router-dom");
 
-var _PageWrapper = _interopRequireDefault(require("../components/PageWrapper"));
+var _PageWrapper = _interopRequireDefault(require("./UI/PageWrapper"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -39539,7 +39539,7 @@ var Header = _styledComponents.default.header(_templateObject());
 var Main = _styledComponents.default.main(_templateObject2());
 
 var Footer = _styledComponents.default.footer(_templateObject3());
-},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../components/PageWrapper":"../src/components/PageWrapper.js","_bundle_loader":"../node_modules/parcel-bundler/src/builtins/bundle-loader.js","./Logo":[["Logo.bf192aa7.js","../src/components/Logo.js"],"Logo.bf192aa7.js.map",["logo.0c0680ff.svg","../src/assets/logo.svg"],"../src/components/Logo.js"]}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","./UI/PageWrapper":"../src/components/UI/PageWrapper.js","_bundle_loader":"../node_modules/parcel-bundler/src/builtins/bundle-loader.js","./Logo":[["Logo.bf192aa7.js","../src/components/Logo.js"],"Logo.bf192aa7.js.map",["logo.0c0680ff.svg","../src/assets/logo.svg"],"../src/components/Logo.js"]}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -39567,7 +39567,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40629" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33281" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

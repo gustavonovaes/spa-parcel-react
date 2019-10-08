@@ -117,31 +117,44 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../src/pages/Home.js":[function(require,module,exports) {
+})({"../src/components/UI/Col.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = Home;
-
-var _react = _interopRequireDefault(require("react"));
+exports.default = void 0;
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
-var _Dashboard = _interopRequireDefault(require("../components/Dashboard"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _templateObject2() {
+function _templateObject() {
   var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n\n  flex: 1 0 50%;\n\n  max-width: 60vw;\n\n  margin: 40px 0;\n"]);
 
-  _templateObject2 = function _templateObject2() {
+  _templateObject = function _templateObject() {
     return data;
   };
 
   return data;
 }
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var _default = _styledComponents.default.div(_templateObject());
+
+exports.default = _default;
+},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"../src/components/UI/Row.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
   var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: center;\n"]);
@@ -155,6 +168,27 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
+var _default = _styledComponents.default.div(_templateObject());
+
+exports.default = _default;
+},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"../src/pages/Home.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Home;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _Dashboard = _interopRequireDefault(require("../components/Dashboard"));
+
+var _Col = _interopRequireDefault(require("../components/UI/Col"));
+
+var _Row = _interopRequireDefault(require("../components/UI/Row"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 var Doughnut = _react.default.lazy(function () {
   return require("_bundle_loader")(require.resolve("../components/Charts/Doughnut"));
 });
@@ -164,24 +198,24 @@ var Line = _react.default.lazy(function () {
 });
 
 function Home() {
-  return _react.default.createElement(_Dashboard.default, null, _react.default.createElement("h1", null, "Charts"), _react.default.createElement(Row, null, _react.default.createElement(Col, {
+  return _react.default.createElement(_Dashboard.default, null, _react.default.createElement("h1", null, "Charts"), _react.default.createElement(_Row.default, null, _react.default.createElement(_Col.default, {
     size: "1"
   }, _react.default.createElement(_react.default.Suspense, {
     fallback: _react.default.createElement("span", null, "Loading...")
-  }, _react.default.createElement(Doughnut, null))), _react.default.createElement(Col, {
+  }, _react.default.createElement(Doughnut, {
+    updateInterval: 2000
+  }))), _react.default.createElement(_Col.default, {
     size: "2",
     style: {
       flexGrow: 3
     }
   }, _react.default.createElement(_react.default.Suspense, {
     fallback: _react.default.createElement("span", null, "Loading...")
-  }, _react.default.createElement(Line, null)))));
+  }, _react.default.createElement(Line, {
+    updateInterval: 5000
+  })))));
 }
-
-var Row = _styledComponents.default.div(_templateObject());
-
-var Col = _styledComponents.default.article(_templateObject2());
-},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","../components/Dashboard":"../src/components/Dashboard.js","_bundle_loader":"../node_modules/parcel-bundler/src/builtins/bundle-loader.js","../components/Charts/Doughnut":[["Doughnut.98d19cb9.js","../src/components/Charts/Doughnut.js"],"Doughnut.98d19cb9.js.map","../src/components/Charts/Doughnut.js"],"../components/Charts/Line":[["Line.f5ed6a1a.js","../src/components/Charts/Line.js"],"Line.f5ed6a1a.js.map","../src/components/Charts/Line.js"]}],"../node_modules/moment/moment.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../components/Dashboard":"../src/components/Dashboard.js","../components/UI/Col":"../src/components/UI/Col.js","../components/UI/Row":"../src/components/UI/Row.js","_bundle_loader":"../node_modules/parcel-bundler/src/builtins/bundle-loader.js","../components/Charts/Doughnut":[["Doughnut.98d19cb9.js","../src/components/Charts/Doughnut.js"],"Doughnut.98d19cb9.js.map","../src/components/Charts/Doughnut.js"],"../components/Charts/Line":[["Line.f5ed6a1a.js","../src/components/Charts/Line.js"],"Line.f5ed6a1a.js.map","../src/components/Charts/Line.js"]}],"../node_modules/moment/moment.js":[function(require,module,exports) {
 var define;
 var global = arguments[3];
 //! moment.js
@@ -23605,7 +23639,67 @@ var Scatter = function (_React$Component10) {
 exports.Scatter = Scatter;
 var defaults = _chart.default.defaults;
 exports.defaults = defaults;
-},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","chart.js":"../node_modules/chart.js/dist/Chart.js","lodash/isEqual":"../node_modules/lodash/isEqual.js","lodash/keyBy":"../node_modules/lodash/keyBy.js","process":"../node_modules/process/browser.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","chart.js":"../node_modules/chart.js/dist/Chart.js","lodash/isEqual":"../node_modules/lodash/isEqual.js","lodash/keyBy":"../node_modules/lodash/keyBy.js","process":"../node_modules/process/browser.js"}],"../src/hooks/useInterval.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = useInterval;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function useInterval(getData) {
+  var updateInterval = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 3000;
+
+  var _React$useState = _react.default.useState(getData()),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      data = _React$useState2[0],
+      setData = _React$useState2[1];
+
+  var _React$useState3 = _react.default.useState(0),
+      _React$useState4 = _slicedToArray(_React$useState3, 2),
+      intervalHandler = _React$useState4[0],
+      setIntervalHandler = _React$useState4[1];
+
+  _react.default.useEffect(function () {
+    if (!updateInterval) {
+      return function () {};
+    }
+
+    var intervalId = setInterval(function () {
+      setData(getData());
+    }, updateInterval);
+    setIntervalHandler(intervalId);
+    return function () {
+      intervalHandler && clearInterval(intervalHandler);
+    };
+  }, []);
+
+  return [data];
+}
+},{"react":"../node_modules/react/index.js"}],"../src/utils/getRandomInt.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = getRandomInt;
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -23633,7 +23727,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40629" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33281" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

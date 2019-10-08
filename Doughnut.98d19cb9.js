@@ -129,6 +129,10 @@ var _react = _interopRequireDefault(require("react"));
 
 var _reactChartjs = require("react-chartjs-2");
 
+var _getRandomInt = _interopRequireDefault(require("../../utils/getRandomInt"));
+
+var _useInterval3 = _interopRequireDefault(require("../../hooks/useInterval"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
@@ -139,31 +143,12 @@ function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) ||
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-_reactChartjs.defaults.global.responsive = true;
+function Doughnut(_ref) {
+  var updateInterval = _ref.updateInterval;
 
-function Doughnut() {
-  var _React$useState = _react.default.useState(getData()),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      data = _React$useState2[0],
-      setData = _React$useState2[1];
-
-  var _React$useState3 = _react.default.useState(0),
-      _React$useState4 = _slicedToArray(_React$useState3, 2),
-      intervalHandler = _React$useState4[0],
-      setIntervalHandler = _React$useState4[1];
-
-  _react.default.useEffect(function () {
-    setIntervalHandler(setInterval(function () {
-      return updateState();
-    }, 3000));
-    return function () {
-      clearInterval(intervalHandler);
-    };
-  }, []);
-
-  function updateState() {
-    setData(getData());
-  }
+  var _useInterval = (0, _useInterval3.default)(getData, updateInterval),
+      _useInterval2 = _slicedToArray(_useInterval, 1),
+      data = _useInterval2[0];
 
   return _react.default.createElement(_reactChartjs.Doughnut, {
     data: data
@@ -174,21 +159,17 @@ function getData() {
   return {
     labels: ['Blue', 'Green', 'Yellow'],
     datasets: [{
-      data: [getRandomInt(150, 280), getRandomInt(60, 150), getRandomInt(0, 60)],
+      data: [(0, _getRandomInt.default)(150, 280), (0, _getRandomInt.default)(60, 150), (0, _getRandomInt.default)(0, 60)],
       backgroundColor: ['#076E95', '#4BB543', '#FFCE56'],
       hoverBackgroundColor: ['#076E95', '#4BB543', '#FFCE56']
     }]
   };
 }
 
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
 var _default = _react.default.memo(Doughnut);
 
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-chartjs-2":"../node_modules/react-chartjs-2/es/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-chartjs-2":"../node_modules/react-chartjs-2/es/index.js","../../utils/getRandomInt":"../src/utils/getRandomInt.js","../../hooks/useInterval":"../src/hooks/useInterval.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -216,7 +197,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40629" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33281" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
