@@ -219,7 +219,12 @@ function Home() {
     updateInterval: 5000
   })))), _react.default.createElement("h1", null, "Tables"), _react.default.createElement(_react.default.Suspense, {
     fallback: _react.default.createElement("span", null, "Loading...")
-  }, _react.default.createElement(_Row.default, null, _react.default.createElement(_Col.default, null, _react.default.createElement(SimpleTable, null)))));
+  }, _react.default.createElement(_Row.default, null, _react.default.createElement(_Col.default, {
+    style: {
+      maxHeight: "25vh",
+      overflow: "auto"
+    }
+  }, _react.default.createElement(SimpleTable, null)))));
 }
 },{"react":"../node_modules/react/index.js","../components/Dashboard":"../src/components/Dashboard.js","../components/UI/Col":"../src/components/UI/Col.js","../components/UI/Row":"../src/components/UI/Row.js","_bundle_loader":"../node_modules/parcel-bundler/src/builtins/bundle-loader.js","../components/Charts/Doughnut":[["Doughnut.98d19cb9.js","../src/components/Charts/Doughnut.js"],"Doughnut.98d19cb9.js.map","../src/components/Charts/Doughnut.js"],"../components/Charts/Line":[["Line.f5ed6a1a.js","../src/components/Charts/Line.js"],"Line.f5ed6a1a.js.map","../src/components/Charts/Line.js"],"../components/Tables/Simple":[["Simple.69581025.js","../src/components/Tables/Simple.js"],"Simple.69581025.js.map","../src/components/Tables/Simple.js"]}],"../node_modules/moment/moment.js":[function(require,module,exports) {
 var define;
@@ -23733,7 +23738,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46343" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36361" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

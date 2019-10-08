@@ -3014,14 +3014,16 @@ var _SortedTable = _interopRequireDefault(require("./SortedTable"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  max-height: 50vh;\n  overflow: auto;\n\n  table {\n    width: 100%;\n\n    border-spacing: 0;\n    border: 1px solid black;\n\n    thead {\n      tr { \n        th {\n          background: white;\n          position: sticky;\n          top: 0;\n          z-index: 10;\n        }\n      }\n    }\n\n    tr {\n      :last-child {\n        td {\n          border-bottom: 0;\n        }\n      }\n    }\n\n    th,\n    td {\n      margin: 0;\n      padding: 0.5rem;\n      border-bottom: 1px solid black;\n      border-right: 1px solid black;\n\n      :last-child {\n        border-right: 0;\n      }\n    }\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n\n  table {\n    width: 100%;\n    border-collapse: collapse;\n    border-spacing: 0;\n\n    thead {\n      tr { \n        th {\n          background: white;\n          position: sticky;\n          top: 0;\n          z-index: 10;\n        }\n      }\n    }\n\n    th,\n    td {\n      margin: 0;\n      border: 1px solid #dbdbdb;\n      border-width: 0 0 1px;\n      padding: .5em .75em;\n      vertical-align: top;\n\n    }\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -3068,44 +3070,18 @@ function Simple() {
 
 var Style = _styledComponents.default.div(_templateObject());
 
-function range(len) {
-  var arr = [];
-
-  for (var i = 0; i < len; i++) {
-    arr.push(i);
-  }
-
-  return arr;
-}
-
-function newPerson() {
-  var statusChance = Math.random();
-  return {
-    firstName: 'Gustavo',
-    lastName: 'Novaes',
-    age: Math.floor(Math.random() * 30),
-    visits: Math.floor(Math.random() * 100),
-    progress: Math.floor(Math.random() * 100),
-    status: statusChance > 0.66 ? 'relationship' : statusChance > 0.33 ? 'complicated' : 'single'
-  };
-}
-
-function makeData() {
-  for (var _len = arguments.length, lens = new Array(_len), _key = 0; _key < _len; _key++) {
-    lens[_key] = arguments[_key];
-  }
-
-  var makeDataLevel = function makeDataLevel() {
-    var depth = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-    var len = lens[depth];
-    return range(len).map(function (d) {
-      return _objectSpread({}, newPerson(), {
-        subRows: lens[depth + 1] ? makeDataLevel(depth + 1) : undefined
-      });
-    });
-  };
-
-  return makeDataLevel();
+function makeData(len) {
+  return _toConsumableArray(Array(len)).map(function (d) {
+    var statusChance = Math.random();
+    return {
+      firstName: 'Gustavo',
+      lastName: 'Novaes',
+      age: Math.floor(Math.random() * 30),
+      visits: Math.floor(Math.random() * 100),
+      progress: Math.floor(Math.random() * 100),
+      status: statusChance > 0.66 ? 'relationship' : statusChance > 0.33 ? 'complicated' : 'single'
+    };
+  });
 }
 
 var _default = Simple;
@@ -3138,7 +3114,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46343" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36361" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
