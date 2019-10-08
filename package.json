@@ -23,6 +23,7 @@
     "react-chartjs-2": "^2.8.0",
     "react-dom": "^16.10.2",
     "react-router-dom": "^5.1.2",
+    "react-table": "next",
     "styled-components": "^5.0.0-beta.9"
   }
 }
