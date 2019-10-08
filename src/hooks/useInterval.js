@@ -5,17 +5,22 @@ export default function useInterval(getData, updateInterval = 3000) {
   const [intervalHandler, setIntervalHandler] = React.useState(0);
 
   React.useEffect(() => {
+    let isUmounted = false;
+
     if (!updateInterval) {
       return () => { }
     }
 
     const intervalId = setInterval(() => {
-      setData(getData())
+      if (!isUmounted) {
+        setData(getData())
+      }
     }, updateInterval);
 
     setIntervalHandler(intervalId);
 
     return () => {
+      isUmounted = true;
       intervalHandler && clearInterval(intervalHandler);
     }
   }, []);
