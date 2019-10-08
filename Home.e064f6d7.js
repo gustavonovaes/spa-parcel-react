@@ -23684,15 +23684,20 @@ function useInterval(getData) {
       setIntervalHandler = _React$useState4[1];
 
   _react.default.useEffect(function () {
+    var isUmounted = false;
+
     if (!updateInterval) {
       return function () {};
     }
 
     var intervalId = setInterval(function () {
-      setData(getData());
+      if (!isUmounted) {
+        setData(getData());
+      }
     }, updateInterval);
     setIntervalHandler(intervalId);
     return function () {
+      isUmounted = true;
       intervalHandler && clearInterval(intervalHandler);
     };
   }, []);
@@ -23738,7 +23743,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36361" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41493" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
