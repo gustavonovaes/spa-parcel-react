@@ -12,7 +12,6 @@ export default styled.div`
   
   @media (min-width: 800px) {
     flex: 1 0 40%;
-    max-width: 50%;
     margin-top: 20px;
 
     + div {
