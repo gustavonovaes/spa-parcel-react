@@ -1,25 +1,13 @@
 import React from "react";
-
 import { Line as LineCharjs } from "react-chartjs-2";
 
-function Line() {
-  const [data, setData] = React.useState(getData());
-  const [intervalHandler, setIntervalHandler] = React.useState(0);
+import useInterval from "../../hooks/useInterval";
+import getRandomInt from "../../utils/getRandomInt";
 
-  React.useEffect(() => {
-    setIntervalHandler(setInterval(() => updateState(), 3000));
-    return () => {
-      clearInterval(intervalHandler);
-    }
-  }, []);
-
-  function updateState() {
-    setData(getData());
-  }
-
+function Line({ updateInterval }) {
+  const [data] = useInterval(getData, updateInterval);
   return <LineCharjs data={data} />
 }
-
 
 function getData() {
   const data = [...new Array(getRandomInt(10, 30))].map(() => getRandomInt(20, 80));
@@ -50,10 +38,6 @@ function getData() {
       }
     ]
   }
-}
-
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 export default React.memo(Line);

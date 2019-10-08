@@ -1,23 +1,11 @@
 import React from "react";
 import { Doughnut as DoughnutCharjs, defaults } from "react-chartjs-2";
 
-defaults.global.responsive = true;
+import getRandomInt from "../../utils/getRandomInt";
+import useInterval from "../../hooks/useInterval";
 
-function Doughnut() {
-  const [data, setData] = React.useState(getData());
-  const [intervalHandler, setIntervalHandler] = React.useState(0);
-
-  React.useEffect(() => {
-    setIntervalHandler(setInterval(() => updateState(), 3000));
-    return () => {
-      clearInterval(intervalHandler);
-    }
-  }, []);
-
-  function updateState() {
-    setData(getData());
-  }
-
+function Doughnut({ updateInterval }) {
+  const [data] = useInterval(getData, updateInterval);
   return <DoughnutCharjs data={data} />
 }
 
@@ -42,10 +30,6 @@ function getData() {
       ]
     }]
   }
-}
-
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 export default React.memo(Doughnut);

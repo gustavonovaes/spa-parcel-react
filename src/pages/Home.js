@@ -14,13 +14,13 @@ export default function Home() {
     <Row>
       <Col size="1">
         <React.Suspense fallback={<span>Loading...</span>}>
-          <Doughnut />
+          <Doughnut updateInterval={2000} />
         </React.Suspense>
       </Col>
 
       <Col size="2" style={{ flexGrow: 3 }}>
         <React.Suspense fallback={<span>Loading...</span>}>
-          <Line />
+          <Line updateInterval={5000} />
         </React.Suspense>
       </Col>
     </Row>
