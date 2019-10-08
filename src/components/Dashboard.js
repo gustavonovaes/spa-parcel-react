@@ -41,8 +41,11 @@ const Header = styled.header`
   justify-content: space-between;
   align-items: center;
 
-  height: 100px;
-  padding: 0 20px;
+  padding: 0 10px;
+  @media(min-width: 800px) {
+    height: 100px;
+    padding: 0 20px;  
+  }
   
   background-color: #fafafa;
   box-shadow: 0 0 5px rgba(0, 0, 0, .08);
@@ -55,7 +58,11 @@ const Header = styled.header`
 
   nav { 
     a {
-      padding: 20px;
+      padding: 10px;
+      @media(min-width: 800px) { 
+        padding: 20px;
+      }
+
       background-color: white;
       color: #333;
 
@@ -74,12 +81,20 @@ const Header = styled.header`
 const Main = styled.main`
   flex-grow: 1;
   overflow: auto;
-  padding: 20px;
+
+  padding: 10px;
+  @media(min-width: 800px) { 
+    padding: 20px;
+  }
 `;
 
 const Footer = styled.footer`
   background-color: #f3f3f3;
-  padding: 20px;
+  
+  padding: 10px;
+  @media(min-width: 800px) { 
+    padding: 20px;
+  }
 
   color: #666;
 `;
