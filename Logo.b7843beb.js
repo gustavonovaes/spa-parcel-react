@@ -2,5 +2,5 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 module.exports="logo.ef351327.svg";
 },{}],"ieBe":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=u;var e=r(require("react")),t=r(require("../assets/logo.svg"));function r(e){return e&&e.__esModule?e:{default:e}}function u(){return e.default.createElement("img",{className:"header--logo",alt:"logo",src:t.default})}
-},{"react":"AQ6k","../assets/logo.svg":"g12o"}]},{},[], null)
+},{"react":"n8MK","../assets/logo.svg":"g12o"}]},{},[], null)
 //# sourceMappingURL=Logo.b7843beb.js.map
