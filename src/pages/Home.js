@@ -1,16 +1,14 @@
 import React from "react";
-
-import Dashboard from '../components/Dashboard';
+import Layout from "./Layout";
 import Col from '../components/UI/Col';
 import Row from '../components/UI/Row';
-
 
 const Doughnut = React.lazy(() => import("../components/Charts/Doughnut"));
 const Line = React.lazy(() => import("../components/Charts/Line"));
 const SimpleTable = React.lazy(() => import("../components/Tables/Simple"));
 
 export default function Home() {
-  return <Dashboard>
+  return <Layout>
     <h1>Charts</h1>
 
     <Row>
@@ -36,6 +34,5 @@ export default function Home() {
         </Col>
       </Row>
     </React.Suspense>
-
-  </Dashboard >
+  </Layout>
 }

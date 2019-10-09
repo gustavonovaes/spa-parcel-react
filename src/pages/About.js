@@ -1,9 +1,9 @@
 import React from "react";
 
-import Dashboard from "../components/Dashboard";
+import Layout from "./Layout";
 
 export default function About() {
-  return <Dashboard>
+  return <Layout>
     <h1>About</h1>
-  </Dashboard>
+  </Layout>
 }
