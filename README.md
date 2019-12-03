@@ -1,3 +1,8 @@
+## CSS 
+
+- [x] Custom properties
+- [x] prefers-reduced-motion
+- [ ] [prefers-color-scheme: dark](https://css-tricks.com/dark-modes-with-css/)
 
 ## Libs para experimentar/praticar
 
@@ -10,4 +15,3 @@
 - [ ] [react-datepicker](https://github.com/Hacker0x01/react-datepicker/)
 - ~~[ ] [canvasjs](https://canvasjs.com/)~~
 - [x] [chart.js](https://github.com/chartjs/Chart.js)
-- [ ] [prefers-color-scheme: dark](https://css-tricks.com/dark-modes-with-css/)
