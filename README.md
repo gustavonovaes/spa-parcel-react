@@ -1,3 +1,11 @@
+## Trying
+
+https://gustavonovaes.github.io/spa-parcel-react/
+
+## Preview 
+
+![Preview](/preview.gif)
+
 ## CSS 
 
 - [x] Custom properties
@@ -13,5 +21,5 @@
 - [ ] [text-mask](https://github.com/text-mask/text-mask)
 - [ ] [react-helmet](https://github.com/nfl/react-helmet)
 - [ ] [react-datepicker](https://github.com/Hacker0x01/react-datepicker/)
-- ~~[ ] [canvasjs](https://canvasjs.com/)~~
+- [ ] [canvasjs](https://canvasjs.com/)
 - [x] [chart.js](https://github.com/chartjs/Chart.js)
