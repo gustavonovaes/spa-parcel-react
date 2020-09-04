@@ -1,4 +1,4 @@
-## Trying
+## Try
 
 https://gustavonovaes.github.io/spa-parcel-react/
 
